@@ -28,7 +28,7 @@ app.post('/login', (req,res) =>{
     var db = client.db('myDB');
     var name= req.body.username
     var pass=req.body.password
-    if (name="admin" && pass=="admin"){
+    if (name=="admin" && pass=="admin"){
       res.render('Home')
       return;}
     else { 
@@ -67,6 +67,7 @@ app.post('/register',  (req,res) =>{
       res.render('error',{msg})
       return;
     }
+
     else if(userexist!=null){
       var msg="This user already exists"
       res.render('error',{msg})
