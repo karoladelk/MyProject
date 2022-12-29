@@ -23,9 +23,7 @@ var username="";
 
 app.post('/login', (req,res) =>{
   
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
-    if(err) throw err
-    var db = client.db('myDB');
+  
     var name= req.body.username
     var pass=req.body.password
     if (name=="admin" && pass=="admin"){
@@ -33,23 +31,27 @@ app.post('/login', (req,res) =>{
       return;
     }
     else { 
+      MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+      if(err) throw err
+      var db = client.db('myDB');
       var record = await db.collection('myCollection').findOne({username : name , password : pass});
       if(record != null){
       username = record.username;
       res.render('Home')
       return;
     }
-    
+  
     else{
       var msg="User not registered"
       res.render('error',{msg})
       return;
     }
-  }
+      })
+    }
+   
 }
-  )  
-}
-);
+)
+;
 
 app.post('/register',  (req,res) =>{
   MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
