@@ -30,7 +30,8 @@ app.post('/login', (req,res) =>{
     var pass=req.body.password
     if (name=="admin" && pass=="admin"){
       res.render('Home')
-      return;}
+      return;
+    }
     else { 
       var record = await db.collection('myCollection').findOne({username : name , password : pass});
       if(record != null){
