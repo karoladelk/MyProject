@@ -27,8 +27,8 @@ app.post('/login', (req,res) =>{
     var name= req.body.username
     var pass=req.body.password
     if (name=="admin" && pass=="admin"){
-      res.render('Home')
-      return;
+      res.render('Home');
+      //return;
     }
     else { 
       MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
