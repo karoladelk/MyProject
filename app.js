@@ -40,26 +40,30 @@ app.post('/login', (req,res) =>{
       res.render('Home')
       return;
     }
+  --})}
+    
+    */
   
     else{
       var msg="User not registered"
       res.render('error',{msg})
       return;
     }
-      })
-    }
-   */
+  
+    
+   
 }
 )
 ;
 
 app.post('/register',  (req,res) =>{
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+  /*MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var name= req.body.username
     var pass=req.body.password
     var userexist = await db.collection('myCollection').findOne({username : name , password : pass});
+    */
     if (Object.keys(name).length === 0){
       var msg="You did not type username please go back and try again"
       res.render('error',{msg})
@@ -78,13 +82,13 @@ app.post('/register',  (req,res) =>{
     } 
     else{
       var golist=[]
-    var usernew = await db.collection('myCollection').insertOne({username : name , password : pass, wantTo: golist});
+    //var usernew = await db.collection('myCollection').insertOne({username : name , password : pass, wantTo: golist});
     res.redirect('/login')
   return; }
     
 }) ;
 
-});
+//});
 
 
 
@@ -158,7 +162,7 @@ app.get('/santorini',function(req,res){
 
 app.post('/wanttogo',async(req,res) =>{
   var dest= [];
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+ /* MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var result = db.collection("myCollection").find({}).toArray(function(err,result){
@@ -174,12 +178,12 @@ app.post('/wanttogo',async(req,res) =>{
   for (let i = 0; i < goList.length; i++) {
   dest.push(goList[i])
 }
-}}
+}}*/
 //console.log(dest);
 res.render('wanttogo',{dest});
 }) ;
 
-})});
+//})});
 
 app.post('/inca', (req,res) =>{
   MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
