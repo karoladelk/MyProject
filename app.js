@@ -25,39 +25,18 @@ var username="";
 app.post('/login', (req,res) =>{
   
   
-    var name= req.body.username
-    var pass=req.body.password
-
-    if (name== "admin" && pass== "admin"){
-      req.session.username=req.body.username;
-      res.render('Home');
-      //return;
-    }
-   /* else { 
-      MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
-      if(err) throw err
-      var db = client.db('myDB');
-      var record = await db.collection('myCollection').findOne({username : name , password : pass});
-      if(record != null){
-      username = record.username;
-      res.render('Home')
-      return;
-    }
-  })}
-    
-    */
-  
-    else{
-      var msg="User not registered"
-      res.render('error',{msg})
-      //return;
-    }
-  
-    
-   
-}
-)
-;
+  const userName = req.body.username;
+  // req.session.username=req.body.username;
+   var passWord = req.body.password;
+   var flag = 0;
+   if(userName=="admin" && passWord=="admin"){
+    // dbo.collection(collection).insertOne({ username:userName, password:passWord});
+    req.session.username=username;
+    res.render('home');
+   }else{
+     //console.log('wrong credentials');
+     res.render('login', {message: 'Wrong credentials or user not already logged in '});
+   };
 
 app.post('/register',  (req,res) =>{
   MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
