@@ -50,7 +50,7 @@ app.post('/login', (req,res) =>{
     else{
       var msg="User not registered"
       res.render('error',{msg})
-      return;
+      //return;
     }
   
     
