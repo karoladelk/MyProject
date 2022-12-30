@@ -27,7 +27,7 @@ app.post('/login', (req,res) =>{
     var name= req.body.username
     var pass=req.body.password
 
-    if (name== 'admin' && pass== 'admin'){
+    if (name== "admin" && pass== "admin"){
       res.render('Home');
       return;
     }
