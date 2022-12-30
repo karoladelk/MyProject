@@ -30,7 +30,7 @@ app.post('/login', (req,res) =>{
       res.render('Home');
       //return;
     }
-    else { 
+   /* else { 
       MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
       if(err) throw err
       var db = client.db('myDB');
@@ -48,7 +48,7 @@ app.post('/login', (req,res) =>{
     }
       })
     }
-   
+   */
 }
 )
 ;
