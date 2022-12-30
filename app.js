@@ -31,7 +31,7 @@ app.post('/login', (req,res) =>{
     if (name== "admin" && pass== "admin"){
       req.session.username=req.body.username;
       res.render('Home');
-      return;
+      //return;
     }
    /* else { 
       MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
