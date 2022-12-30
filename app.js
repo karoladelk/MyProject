@@ -186,7 +186,7 @@ res.render('wanttogo',{dest});
 //})});
 
 app.post('/inca', (req,res) =>{
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+  /*MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var result = db.collection("myCollection").find({}).toArray(function(err,result){
@@ -217,14 +217,14 @@ app.post('/inca', (req,res) =>{
       else{
         db.collection("myCollection").update({},{$push:{wantTo:"Inca"}})
       }
-    
+    */
   return; });
-})});
+//})});
 
 
 
 app.post('/annapurna', (req,res) =>{
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+  /*MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var result = db.collection("myCollection").find({}).toArray(function(err,result){
@@ -255,13 +255,13 @@ app.post('/annapurna', (req,res) =>{
       else{
         db.collection("myCollection").update({},{$push:{wantTo:"annapurna"}})
       }
-    
+    */
   return; });
-})});
+//})});
 
 
 app.post('/bali', (req,res) =>{
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+  /*MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var result = db.collection("myCollection").find({}).toArray(function(err,result){
@@ -292,12 +292,12 @@ app.post('/bali', (req,res) =>{
       else{
         db.collection("myCollection").update({},{$push:{wantTo:"bali"}})
       }
-    
+    */
   return; });
-})});
+//})});
 
 app.post('/santorini', (req,res) =>{
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+  /*MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var result = db.collection("myCollection").find({}).toArray(function(err,result){
@@ -328,12 +328,12 @@ app.post('/santorini', (req,res) =>{
       else{
         db.collection("myCollection").update({},{$push:{wantTo:"santorini"}})
       }
-    
+    */
   return; });
-})});
+//})});
 
 app.post('/paris', (req,res) =>{
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+  /*MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var result = db.collection("myCollection").find({}).toArray(function(err,result){
@@ -364,13 +364,13 @@ app.post('/paris', (req,res) =>{
       else{
         db.collection("myCollection").update({},{$push:{wantTo:"paris"}})
       }
-    
+    */
   return; });
-})});
+//})});
 
 
 app.post('/rome', (req,res) =>{
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+  /*MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var result = db.collection("myCollection").find({}).toArray(function(err,result){
@@ -401,9 +401,9 @@ app.post('/rome', (req,res) =>{
       else{
         db.collection("myCollection").update({},{$push:{wantTo:"rome"}})
       }
-    
+    */
   return; });
-})});
+//})});
 
 
 app.post('/search',function(req,res){
