@@ -24,7 +24,6 @@ var username="";
 
 app.post('/login', (req,res) =>{
   
-  
   const userName = req.body.username;
   // req.session.username=req.body.username;
    var passWord = req.body.password;
@@ -36,7 +35,34 @@ app.post('/login', (req,res) =>{
    }else{
      //console.log('wrong credentials');
      res.render('login', {message: 'Wrong credentials or user not already logged in '});
-   };
+   }
+
+  //  MClient.connect(url, function(err, db) {
+  //    if (err) throw err;
+  //    var dbo = db.db(database);
+  //    dbo.collection(collection).find({}).toArray(function(err, result) {
+  //      if (err) throw err;
+  //      var arr = new Array(result.length).fill(0);
+  //      for (let i=0;i<result.length;i++){
+  //        if((userName==result[i].username && passWord==result[i].password)){
+  //          flag=1;
+  //        }
+  //      }
+      
+  //      if(flag==1){
+  //       // dbo.collection(collection).insertOne({ username:userName, password:passWord});
+  //       req.session.username=userName;
+  //       res.render('home');
+  //      }else{
+  //        //console.log('wrong credentials');
+  //        res.render('login', {message: 'Wrong credentials or user not already logged in '});
+  //      }
+  //    });
+   
+  //  });
+ });
+
+
 
 app.post('/register',  (req,res) =>{
   MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
