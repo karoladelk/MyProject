@@ -29,6 +29,7 @@ app.post('/login', (req,res) =>{
     var pass=req.body.password
 
     if (name== "admin" && pass== "admin"){
+      req.session.username=req.body.username;
       res.render('Home');
       return;
     }
