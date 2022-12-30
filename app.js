@@ -26,7 +26,7 @@ app.post('/login', (req,res) =>{
   
     var name= req.body.username
     var pass=req.body.password
-    
+
     if (name== 'admin' && pass== 'admin'){
       res.render('Home');
       return;
@@ -62,6 +62,8 @@ app.post('/register',  (req,res) =>{
     if(err) throw err
     var db = client.db('myDB');
     var name= req.body.username
+
+    
     var pass=req.body.password
     var userexist = await db.collection('myCollection').findOne({username : name , password : pass});
     if (Object.keys(name).length === 0){
