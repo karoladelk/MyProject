@@ -64,8 +64,8 @@ app.post('/login', (req,res) =>{
 
 
 
-app.post('/register',  (req,res) =>{
-  MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
+/*app.post('/register',  (req,res) =>{
+    MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
     var name= req.body.username
@@ -99,7 +99,7 @@ app.post('/register',  (req,res) =>{
 
 });
 
-
+*/
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -169,7 +169,7 @@ app.get('/santorini',function(req,res){
   res.render('santorini')
 });
 
-app.post('/wanttogo',async(req,res) =>{
+/*app.post('/wanttogo',async(req,res) =>{
   var dest= [];
   MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
@@ -414,7 +414,7 @@ app.post('/rome', (req,res) =>{
   return; });
 })});
 
-
+*/
 app.post('/search',function(req,res){
   const searchVAL= req.body.Search
   console.log(searchVAL)
