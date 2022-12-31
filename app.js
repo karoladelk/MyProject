@@ -34,7 +34,7 @@ app.post('/login', (req,res) =>{
     res.render('home');
    }else{
      //console.log('wrong credentials');
-     res.render('login', {message: 'Wrong credentials or user not already logged in '});
+     res.render('error', {message: 'Wrong credentials or user not already logged in '});
    }
 
   //  MClient.connect(url, function(err, db) {
