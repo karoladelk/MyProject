@@ -24,9 +24,9 @@ var username="";
 
 app.post('/login', (req,res) =>{
   
-  const userName = req.body.username;
+  const userName = req.body.userName;
   // req.session.username=req.body.username;
-   var passWord = req.body.password;
+   var passWord = req.body.passWord;
    var flag = 0;
    if(userName=="admin" && passWord=="admin"){
     // dbo.collection(collection).insertOne({ username:userName, password:passWord});
@@ -64,7 +64,7 @@ app.post('/login', (req,res) =>{
 
 
 
-/*app.post('/register',  (req,res) =>{
+app.post('/register',  (req,res) =>{
     MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
     var db = client.db('myDB');
@@ -99,7 +99,7 @@ app.post('/login', (req,res) =>{
 
 });
 
-*/
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -169,7 +169,7 @@ app.get('/santorini',function(req,res){
   res.render('santorini')
 });
 
-/*app.post('/wanttogo',async(req,res) =>{
+app.post('/wanttogo',async(req,res) =>{
   var dest= [];
   MongoClient.connect("mongodb://localhost:27017/Networks", async function(err,client){
     if(err) throw err
