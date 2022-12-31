@@ -30,7 +30,7 @@ app.post('/login', (req,res) =>{
    var flag = 0;
    if(userName=="admin" && passWord=="admin"){
     // dbo.collection(collection).insertOne({ username:userName, password:passWord});
-    req.session.username=username;
+    req.session.userName=userName;
     res.render('home');
    }else{
      //console.log('wrong credentials');
